@@ -1,0 +1,5 @@
+Client Symbol,Name,Sector,Quantity,Buy Price,Current Price,Market Value,Purchase Date,Dividend Yield,P/E Ratio,52-Week High,52-Week Low,Analyst Rating,Target Price,Risk Level
+ABC,Apple Inc.,Technology,50,150,175,8750,2024-03-01,0.6,28.0,180,120,Buy,190,Medium
+ABC,Vanguard Total Bond ETF,Fixed Income,40,80,82,3280,2024-05-10,2.1,,85,75,Hold,84,Low
+XYZ,Tesla Inc.,Automotive,20,200,230,4600,2024-02-15,0.0,55.0,260,180,Buy,250,High
+XYZ,iShares S&P 500 ETF,Index Fund,10,400,410,4100,2024-01-20,1.2,,420,350,Buy,430,Medium

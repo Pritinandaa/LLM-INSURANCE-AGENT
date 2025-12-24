@@ -1,0 +1,9 @@
+Client,Target Portfolio,Asset Class,Target Allocation (%)
+ABC,Balanced,Stocks,50
+ABC,Balanced,Bonds,30
+ABC,Balanced,ETFs,15
+ABC,Balanced,Cash,5
+XYZ,Growth,Stocks,70
+XYZ,Growth,Bonds,15
+XYZ,Growth,ETFs,10
+XYZ,Growth,Cash,5

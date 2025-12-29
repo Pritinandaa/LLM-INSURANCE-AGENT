@@ -6,9 +6,6 @@ from crewai.tools import BaseTool
 
 
 class SearchInternetTool(BaseTool):
-    """
-    A tool for searching the internet about a given topic.
-    """
 
     def __init__(self):
         super().__init__(
@@ -79,9 +76,6 @@ class SearchInternetTool(BaseTool):
 
 
 class SearchNewsTool(BaseTool):
-    """
-    A tool for searching news about a given topic.
-    """
 
     def __init__(self):
         super().__init__(
@@ -148,18 +142,3 @@ class SearchNewsTool(BaseTool):
                 continue
 
         return '\n'.join(formatted_results)
-
-
-
-# if __name__ == "__main__":
-#     search_tool = SearchInternetTool()
-#     news_tool = SearchNewsTool()
-
-#     try:
-#         internet_results = search_tool.run(query="OpenAI ChatGPT updates")
-#         print("Internet Search Results:\n", internet_results)
-
-#         news_results = news_tool.run(query="OpenAI ChatGPT news")
-#         print("\nNews Search Results:\n", news_results)
-#     except Exception as e:
-#         print(f"An error occurred: {e}")

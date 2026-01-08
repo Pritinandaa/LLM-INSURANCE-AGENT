@@ -1,0 +1,134 @@
+{
+  "description": "Premium modification factors based on risk characteristics",
+  "version": "1.0",
+  "effective_date": "2024-01-01",
+  "modifiers": [
+    {
+      "name": "Loss History Credit/Debit",
+      "category": "experience",
+      "content": "Premium adjustment based on loss history. Excellent loss history with loss ratio under 25% earns 15% credit. Good loss history with ratio 25-40% earns 10% credit. Average loss history with ratio 40-55% is standard rate. Fair loss history with ratio 55-70% receives 10% surcharge. Poor loss history with ratio 70-100% receives 20% surcharge. Very poor history over 100% receives 30% surcharge or decline.",
+      "type": "percentage",
+      "factors": {
+        "excellent": {"loss_ratio_max": 25, "modifier": -0.15, "description": "15% credit"},
+        "good": {"loss_ratio_min": 25, "loss_ratio_max": 40, "modifier": -0.10, "description": "10% credit"},
+        "average": {"loss_ratio_min": 40, "loss_ratio_max": 55, "modifier": 0, "description": "Standard rate"},
+        "fair": {"loss_ratio_min": 55, "loss_ratio_max": 70, "modifier": 0.10, "description": "10% surcharge"},
+        "poor": {"loss_ratio_min": 70, "loss_ratio_max": 100, "modifier": 0.20, "description": "20% surcharge"},
+        "very_poor": {"loss_ratio_min": 100, "modifier": 0.30, "description": "30% surcharge or decline"}
+      }
+    },
+    {
+      "name": "Years in Business Credit",
+      "category": "experience",
+      "content": "Credit for established business operations. New business under 3 years may receive 10% new venture surcharge. 3-5 years in business is standard rate. 5-10 years in business earns 5% credit. Over 10 years earns 10% longevity credit. Over 20 years earns 15% longevity credit.",
+      "type": "percentage",
+      "factors": {
+        "new_venture": {"years_max": 3, "modifier": 0.10, "description": "10% new venture surcharge"},
+        "established": {"years_min": 3, "years_max": 5, "modifier": 0, "description": "Standard rate"},
+        "experienced": {"years_min": 5, "years_max": 10, "modifier": -0.05, "description": "5% credit"},
+        "mature": {"years_min": 10, "years_max": 20, "modifier": -0.10, "description": "10% credit"},
+        "veteran": {"years_min": 20, "modifier": -0.15, "description": "15% credit"}
+      }
+    },
+    {
+      "name": "Claims Frequency Surcharge",
+      "category": "claims",
+      "content": "Additional surcharge based on claim count regardless of severity. Zero claims in 3 years earns 5% claims-free credit. 1-2 claims in 3 years is standard rate. 3-4 claims in 3 years receives 10% frequency surcharge. 5+ claims in 3 years receives 20% frequency surcharge and possible decline.",
+      "type": "percentage",
+      "factors": {
+        "claims_free": {"claims_max": 0, "period_years": 3, "modifier": -0.05, "description": "5% claims-free credit"},
+        "low_frequency": {"claims_min": 1, "claims_max": 2, "period_years": 3, "modifier": 0, "description": "Standard rate"},
+        "moderate_frequency": {"claims_min": 3, "claims_max": 4, "period_years": 3, "modifier": 0.10, "description": "10% frequency surcharge"},
+        "high_frequency": {"claims_min": 5, "period_years": 3, "modifier": 0.20, "description": "20% frequency surcharge"}
+      }
+    },
+    {
+      "name": "Safety Program Credit",
+      "category": "risk_control",
+      "content": "Credit for documented safety and risk management programs. Written safety manual earns 3% credit. Designated safety officer earns 2% credit. Regular safety training (quarterly minimum) earns 3% credit. OSHA compliance certification earns 2% credit. Return-to-work program earns 2% credit. Maximum combined safety credit is 10%.",
+      "type": "percentage",
+      "factors": {
+        "safety_manual": {"modifier": -0.03, "description": "3% credit for written safety manual"},
+        "safety_officer": {"modifier": -0.02, "description": "2% credit for designated safety officer"},
+        "safety_training": {"modifier": -0.03, "description": "3% credit for regular training"},
+        "osha_certified": {"modifier": -0.02, "description": "2% credit for OSHA certification"},
+        "return_to_work": {"modifier": -0.02, "description": "2% credit for return-to-work program"}
+      },
+      "maximum_combined_credit": -0.10
+    },
+    {
+      "name": "Fleet Size Discount",
+      "category": "auto",
+      "content": "Auto liability discount based on fleet size. 1-4 vehicles is standard rate. 5-9 vehicles earns 5% fleet discount. 10-24 vehicles earns 10% fleet discount. 25-49 vehicles earns 15% fleet discount. 50+ vehicles earns 20% fleet discount.",
+      "type": "percentage",
+      "factors": {
+        "small": {"vehicles_max": 4, "modifier": 0, "description": "Standard rate"},
+        "medium": {"vehicles_min": 5, "vehicles_max": 9, "modifier": -0.05, "description": "5% fleet discount"},
+        "large": {"vehicles_min": 10, "vehicles_max": 24, "modifier": -0.10, "description": "10% fleet discount"},
+        "very_large": {"vehicles_min": 25, "vehicles_max": 49, "modifier": -0.15, "description": "15% fleet discount"},
+        "mega": {"vehicles_min": 50, "modifier": -0.20, "description": "20% fleet discount"}
+      }
+    },
+    {
+      "name": "Territory Factor",
+      "category": "location",
+      "content": "Geographic territory adjustment. Rural areas earn 10% credit due to lower loss frequency. Suburban areas are standard rate. Urban areas receive 10% surcharge. High-risk urban (specific cities) receive 20% surcharge. Coastal wind-exposed areas receive wind deductible requirement.",
+      "type": "percentage",
+      "factors": {
+        "rural": {"modifier": -0.10, "description": "10% rural credit"},
+        "suburban": {"modifier": 0, "description": "Standard rate"},
+        "urban": {"modifier": 0.10, "description": "10% urban surcharge"},
+        "high_risk_urban": {"modifier": 0.20, "description": "20% high-risk urban surcharge"}
+      }
+    },
+    {
+      "name": "Deductible Credit",
+      "category": "pricing",
+      "content": "Premium credit for higher deductibles. Standard $1,000 deductible is base rate. $2,500 deductible earns 5% credit. $5,000 deductible earns 10% credit. $10,000 deductible earns 15% credit. $25,000 deductible earns 20% credit. Higher deductibles available for large accounts.",
+      "type": "percentage",
+      "factors": {
+        "standard": {"deductible": 1000, "modifier": 0, "description": "Standard rate"},
+        "elevated": {"deductible": 2500, "modifier": -0.05, "description": "5% credit"},
+        "high": {"deductible": 5000, "modifier": -0.10, "description": "10% credit"},
+        "very_high": {"deductible": 10000, "modifier": -0.15, "description": "15% credit"},
+        "large_deductible": {"deductible": 25000, "modifier": -0.20, "description": "20% credit"}
+      }
+    },
+    {
+      "name": "Multi-Policy Discount",
+      "category": "packaging",
+      "content": "Discount for packaging multiple coverages. Two lines of coverage earns 5% package discount. Three lines earns 10% package discount. Four or more lines earns 15% package discount. BOP (Business Owners Policy) packaging may have additional discounts.",
+      "type": "percentage",
+      "factors": {
+        "single_line": {"lines": 1, "modifier": 0, "description": "Standard rate"},
+        "two_lines": {"lines": 2, "modifier": -0.05, "description": "5% package discount"},
+        "three_lines": {"lines": 3, "modifier": -0.10, "description": "10% package discount"},
+        "full_package": {"lines_min": 4, "modifier": -0.15, "description": "15% package discount"}
+      }
+    },
+    {
+      "name": "Payment Plan Factor",
+      "category": "billing",
+      "content": "Adjustment based on payment method. Full pay upfront earns 5% discount. Quarterly payments are standard rate. Monthly payments add 3% for financing costs. Automatic payment (EFT) earns additional 2% credit.",
+      "type": "percentage",
+      "factors": {
+        "full_pay": {"modifier": -0.05, "description": "5% pay-in-full discount"},
+        "quarterly": {"modifier": 0, "description": "Standard rate"},
+        "monthly": {"modifier": 0.03, "description": "3% financing charge"},
+        "auto_pay": {"modifier": -0.02, "description": "2% auto-pay credit"}
+      }
+    },
+    {
+      "name": "Professional Certification Credit",
+      "category": "qualifications",
+      "content": "Credit for industry certifications and professional designations. Licensed contractor receives 5% credit. Professional certifications (PE, CPA, etc.) earn 5% credit. Industry association membership earns 3% credit. Continuing education compliance earns 2% credit.",
+      "type": "percentage",
+      "factors": {
+        "licensed": {"modifier": -0.05, "description": "5% licensed contractor credit"},
+        "certified": {"modifier": -0.05, "description": "5% professional certification credit"},
+        "association_member": {"modifier": -0.03, "description": "3% association membership credit"},
+        "continuing_education": {"modifier": -0.02, "description": "2% continuing education credit"}
+      }
+    }
+  ]
+}

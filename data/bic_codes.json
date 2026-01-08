@@ -1,0 +1,246 @@
+{
+  "description": "Business Industry Classification (BIC) codes for insurance underwriting",
+  "version": "1.0",
+  "codes": [
+    {
+      "code": "11",
+      "name": "Agriculture, Forestry, Fishing",
+      "description": "Establishments primarily engaged in growing crops, raising animals, harvesting timber, and harvesting fish",
+      "content": "Agriculture forestry fishing farming crop production animal husbandry livestock dairy poultry aquaculture timber logging",
+      "risk_category": "HIGH",
+      "subcategories": ["Crop Production", "Animal Production", "Forestry", "Fishing"]
+    },
+    {
+      "code": "21",
+      "name": "Mining, Quarrying, Oil and Gas",
+      "description": "Extraction of naturally occurring minerals, solids, liquids, and gases",
+      "content": "Mining quarrying oil gas extraction petroleum natural gas coal metal ore nonmetallic minerals drilling exploration",
+      "risk_category": "HIGH",
+      "subcategories": ["Oil and Gas", "Coal Mining", "Metal Ore Mining", "Quarrying"]
+    },
+    {
+      "code": "22",
+      "name": "Utilities",
+      "description": "Electric power, natural gas, steam supply, water supply, and sewage removal",
+      "content": "Utilities electric power generation transmission distribution natural gas water supply sewage wastewater treatment",
+      "risk_category": "MEDIUM",
+      "subcategories": ["Electric Power", "Natural Gas Distribution", "Water Supply", "Sewage"]
+    },
+    {
+      "code": "23",
+      "name": "Construction - General",
+      "description": "General construction of buildings and engineering projects",
+      "content": "Construction general contractor building residential commercial renovation remodeling new construction site preparation",
+      "risk_category": "MEDIUM",
+      "subcategories": ["Residential", "Commercial", "Renovation", "Site Work"]
+    },
+    {
+      "code": "44",
+      "name": "Construction - Commercial/Industrial",
+      "description": "Commercial and industrial construction, heavy construction, specialty trades",
+      "content": "Construction commercial industrial heavy civil engineering infrastructure highway bridge specialty trade contractors roofing electrical plumbing HVAC",
+      "risk_category": "HIGH",
+      "subcategories": ["Heavy Civil", "Specialty Trades", "Industrial", "Infrastructure"]
+    },
+    {
+      "code": "31",
+      "name": "Manufacturing - Food and Beverage",
+      "description": "Food and beverage manufacturing and processing",
+      "content": "Manufacturing food beverage processing bakery dairy meat seafood brewery winery distillery canning preserving",
+      "risk_category": "MEDIUM",
+      "subcategories": ["Food Processing", "Beverage Manufacturing", "Bakery", "Dairy"]
+    },
+    {
+      "code": "32",
+      "name": "Manufacturing - Textiles and Apparel",
+      "description": "Textile mills, textile products, apparel manufacturing",
+      "content": "Manufacturing textiles apparel clothing fabric fiber yarn weaving knitting dyeing finishing garment footwear leather",
+      "risk_category": "LOW",
+      "subcategories": ["Textile Mills", "Apparel", "Footwear", "Leather"]
+    },
+    {
+      "code": "33",
+      "name": "Manufacturing - Machinery and Equipment",
+      "description": "Industrial machinery, computer, and electronic product manufacturing",
+      "content": "Manufacturing machinery equipment industrial computer electronic semiconductor electrical appliance motor engine turbine",
+      "risk_category": "MEDIUM",
+      "subcategories": ["Industrial Machinery", "Electronics", "Electrical Equipment", "Appliances"]
+    },
+    {
+      "code": "42",
+      "name": "Wholesale Trade",
+      "description": "Merchant wholesalers, agents and brokers",
+      "content": "Wholesale trade distribution merchant durable goods nondurable goods electronics machinery motor vehicle parts building materials",
+      "risk_category": "LOW",
+      "subcategories": ["Durable Goods", "Nondurable Goods", "Electronics", "Machinery"]
+    },
+    {
+      "code": "44-45",
+      "name": "Retail Trade - General",
+      "description": "Retailers selling merchandise to consumers",
+      "content": "Retail trade store shop merchandise consumer goods department store supermarket grocery convenience shopping center mall",
+      "risk_category": "LOW",
+      "subcategories": ["Department Stores", "Grocery", "Specialty Retail", "E-commerce"]
+    },
+    {
+      "code": "45",
+      "name": "Retail Trade - Specialty",
+      "description": "Specialty retail stores including electronics, clothing, sporting goods",
+      "content": "Retail specialty store electronics clothing apparel sporting goods furniture home furnishings jewelry gifts books",
+      "risk_category": "LOW",
+      "subcategories": ["Electronics", "Clothing", "Sporting Goods", "Home Furnishings"]
+    },
+    {
+      "code": "48",
+      "name": "Transportation - Trucking",
+      "description": "Truck transportation, local and long-distance freight",
+      "content": "Transportation trucking freight hauling logistics delivery courier shipping cargo long haul local delivery fleet",
+      "risk_category": "HIGH",
+      "subcategories": ["Long Haul", "Local Delivery", "Specialized Freight", "Courier"]
+    },
+    {
+      "code": "49",
+      "name": "Transportation - Warehousing",
+      "description": "Warehousing and storage facilities",
+      "content": "Transportation warehousing storage distribution center fulfillment cold storage logistics facility inventory management",
+      "risk_category": "MEDIUM",
+      "subcategories": ["General Warehousing", "Cold Storage", "Fulfillment", "Distribution"]
+    },
+    {
+      "code": "51",
+      "name": "Information Technology",
+      "description": "Software publishing, data processing, information services",
+      "content": "Information technology software development programming SaaS cloud computing data processing hosting web development mobile apps IT services cybersecurity",
+      "risk_category": "LOW",
+      "subcategories": ["Software Publishing", "SaaS", "IT Services", "Data Processing"]
+    },
+    {
+      "code": "52",
+      "name": "Finance and Insurance",
+      "description": "Financial institutions, insurance carriers, related activities",
+      "content": "Finance insurance banking credit union investment securities brokerage insurance carrier agency real estate lending mortgage",
+      "risk_category": "MEDIUM",
+      "subcategories": ["Banking", "Securities", "Insurance", "Credit"]
+    },
+    {
+      "code": "53",
+      "name": "Real Estate",
+      "description": "Real estate lessors, agents, brokers, property management",
+      "content": "Real estate property management leasing rental agent broker residential commercial industrial landlord tenant HOA",
+      "risk_category": "MEDIUM",
+      "subcategories": ["Property Management", "Brokerage", "Leasing", "Development"]
+    },
+    {
+      "code": "54",
+      "name": "Professional Services",
+      "description": "Legal, accounting, architectural, engineering, consulting services",
+      "content": "Professional services legal law firm accounting CPA architect engineering consulting management marketing advertising research design",
+      "risk_category": "LOW",
+      "subcategories": ["Legal", "Accounting", "Engineering", "Consulting"]
+    },
+    {
+      "code": "55",
+      "name": "Management of Companies",
+      "description": "Holding companies and corporate headquarters",
+      "content": "Management companies holding company headquarters corporate office administration oversight parent company subsidiary",
+      "risk_category": "LOW",
+      "subcategories": ["Holding Companies", "Corporate Offices", "Investment Offices"]
+    },
+    {
+      "code": "56",
+      "name": "Administrative and Support Services",
+      "description": "Office administration, facilities support, employment services",
+      "content": "Administrative support services office staffing employment agency temporary help facilities maintenance security janitorial cleaning landscaping",
+      "risk_category": "MEDIUM",
+      "subcategories": ["Staffing", "Facilities", "Security", "Cleaning"]
+    },
+    {
+      "code": "61",
+      "name": "Educational Services",
+      "description": "Schools, colleges, training centers, tutoring",
+      "content": "Education services school college university training tutoring vocational technical professional development childcare daycare preschool",
+      "risk_category": "MEDIUM",
+      "subcategories": ["K-12", "Higher Education", "Vocational", "Childcare"]
+    },
+    {
+      "code": "62",
+      "name": "Healthcare - Medical",
+      "description": "Hospitals, physician offices, medical laboratories",
+      "content": "Healthcare medical hospital physician doctor clinic ambulatory surgery laboratory diagnostic imaging outpatient specialty care",
+      "risk_category": "HIGH",
+      "subcategories": ["Hospitals", "Physician Offices", "Clinics", "Labs"]
+    },
+    {
+      "code": "62-2",
+      "name": "Healthcare - Dental",
+      "description": "Dental offices and orthodontic practices",
+      "content": "Healthcare dental dentist orthodontist oral surgery periodontics endodontics dental clinic teeth oral health",
+      "risk_category": "MEDIUM",
+      "subcategories": ["General Dentistry", "Orthodontics", "Oral Surgery", "Specialty Dental"]
+    },
+    {
+      "code": "71",
+      "name": "Arts, Entertainment, Recreation",
+      "description": "Performing arts, spectator sports, museums, amusement parks",
+      "content": "Arts entertainment recreation performing arts theater music sports venue stadium museum amusement park casino gaming fitness gym",
+      "risk_category": "MEDIUM",
+      "subcategories": ["Performing Arts", "Sports", "Museums", "Amusement"]
+    },
+    {
+      "code": "72",
+      "name": "Accommodation and Food Services - Hotels",
+      "description": "Hotels, motels, bed and breakfasts, resorts",
+      "content": "Accommodation hotel motel resort bed breakfast lodging hospitality guest rooms vacation rental inn suite",
+      "risk_category": "MEDIUM",
+      "subcategories": ["Hotels", "Motels", "Resorts", "B&Bs"]
+    },
+    {
+      "code": "72-2",
+      "name": "Food Services - Restaurants",
+      "description": "Full-service restaurants, cafes, fine dining",
+      "content": "Food services restaurant dining cafe bistro full service sit down fine dining casual dining family restaurant bar grill",
+      "risk_category": "MEDIUM",
+      "subcategories": ["Fine Dining", "Casual Dining", "Family Restaurant", "Cafe"]
+    },
+    {
+      "code": "72-3",
+      "name": "Food Services - Fast Food/Quick Service",
+      "description": "Fast food restaurants, quick service, takeout",
+      "content": "Food services fast food quick service takeout drive through counter service fast casual pizza delivery sandwich shop",
+      "risk_category": "MEDIUM",
+      "subcategories": ["Fast Food", "Fast Casual", "Delivery", "Counter Service"]
+    },
+    {
+      "code": "72-4",
+      "name": "Food Services - Bars and Nightclubs",
+      "description": "Bars, nightclubs, taverns, drinking establishments",
+      "content": "Food services bar nightclub tavern pub lounge cocktail bar sports bar wine bar brewery taproom drinking establishment",
+      "risk_category": "HIGH",
+      "subcategories": ["Bars", "Nightclubs", "Sports Bars", "Brewpubs"]
+    },
+    {
+      "code": "81",
+      "name": "Repair and Maintenance",
+      "description": "Automotive repair, equipment repair, personal goods repair",
+      "content": "Repair maintenance automotive mechanic body shop equipment machinery electronics appliance personal goods shoes leather",
+      "risk_category": "MEDIUM",
+      "subcategories": ["Auto Repair", "Equipment Repair", "Electronics", "Personal Goods"]
+    },
+    {
+      "code": "81-2",
+      "name": "Personal Care Services",
+      "description": "Beauty salons, barbershops, spas, nail salons",
+      "content": "Personal care services beauty salon barbershop spa nail salon hair styling skincare massage therapy wellness tanning",
+      "risk_category": "LOW",
+      "subcategories": ["Hair Salons", "Barbershops", "Spas", "Nail Salons"]
+    },
+    {
+      "code": "92",
+      "name": "Government and Public Administration",
+      "description": "Government agencies and public administration",
+      "content": "Government public administration federal state local municipal agency department regulatory enforcement public safety",
+      "risk_category": "LOW",
+      "subcategories": ["Federal", "State", "Local", "Regulatory"]
+    }
+  ]
+}

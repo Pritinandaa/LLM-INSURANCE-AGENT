@@ -1,0 +1,124 @@
+{
+  "description": "Underwriting guidelines and coverage rules for insurance decisions",
+  "version": "1.0",
+  "effective_date": "2024-01-01",
+  "guidelines": [
+    {
+      "name": "General Liability Coverage Guidelines",
+      "category": "coverage",
+      "content": "General Liability insurance provides coverage for bodily injury, property damage, and personal/advertising injury claims. Standard limits offered: $1M/$2M (occurrence/aggregate), $2M/$4M, or $5M/$10M. Higher limits available with umbrella. Minimum premium applies based on industry classification. Coverage excludes intentional acts, contractual liability (unless insured contract), pollution, professional services, and auto-related claims. Products-completed operations coverage included for manufacturing and construction. Personal injury includes libel, slander, false arrest, wrongful eviction.",
+      "coverage_type": "general_liability",
+      "standard_limits": ["1000000/2000000", "2000000/4000000", "5000000/10000000"],
+      "key_exclusions": ["intentional_acts", "pollution", "professional_services", "auto_liability", "workers_comp"]
+    },
+    {
+      "name": "Property Coverage Guidelines",
+      "category": "coverage",
+      "content": "Commercial Property insurance covers buildings, business personal property, and business income. Coverage forms: Basic, Broad, or Special (all-risk). Valuation: Replacement Cost or Actual Cash Value. Coinsurance clause typically 80% or 90%. Business Income coverage replaces lost income during restoration period, typically 12 months. Extra Expense coverage for costs to minimize shutdown. Equipment Breakdown coverage available as endorsement. Standard deductibles: $1,000, $2,500, $5,000, $10,000. Wind/hail deductibles may apply in coastal areas.",
+      "coverage_type": "property",
+      "coverage_forms": ["basic", "broad", "special"],
+      "valuation_methods": ["replacement_cost", "actual_cash_value"],
+      "coinsurance_options": [80, 90, 100]
+    },
+    {
+      "name": "Auto Liability Coverage Guidelines",
+      "category": "coverage",
+      "content": "Commercial Auto Liability provides coverage for owned, hired, and non-owned vehicles. Liability limits: $500K, $1M, or $2M Combined Single Limit (CSL). Physical damage coverage: Comprehensive and Collision with deductibles. Hired auto coverage for rented vehicles. Non-owned auto for employee personal vehicles used for business. Medical payments coverage optional. Uninsured/underinsured motorist coverage may be required by state. Fleet discounts available for 5+ vehicles. Driver MVR review required for all scheduled drivers.",
+      "coverage_type": "auto_liability",
+      "standard_limits": ["500000", "1000000", "2000000"],
+      "physical_damage_deductibles": [500, 1000, 2500],
+      "fleet_discount_threshold": 5
+    },
+    {
+      "name": "Workers Compensation Guidelines",
+      "category": "coverage",
+      "content": "Workers Compensation coverage provides statutory benefits for work-related injuries and illnesses. Coverage mandatory in most states. Employers Liability limits: $100K/$500K/$100K or $500K/$500K/$500K or $1M/$1M/$1M. Experience modification factor applies based on loss history. Payroll audit conducted annually. Classifications based on job duties per NCCI codes. Wrap-up programs available for large construction projects. Return-to-work programs reduce long-term costs.",
+      "coverage_type": "workers_compensation",
+      "employers_liability_limits": ["100000/500000/100000", "500000/500000/500000", "1000000/1000000/1000000"],
+      "audit_frequency": "annual"
+    },
+    {
+      "name": "Underwriting Authority Matrix",
+      "category": "authority",
+      "content": "Underwriting authority levels determine approval requirements. Standard authority (auto-bind): Premium up to $50,000, standard industry classes, clean loss history (loss ratio under 50%). Senior underwriter review required for: Premium $50,001-$150,000, moderate loss history, non-standard operations. Management approval required for: Premium over $150,000, high-hazard industries, adverse loss history, coverage modifications. Referral to reinsurance: Premium over $500,000 or limits exceeding treaty. All new accounts require documentation review within 30 days of binding.",
+      "coverage_type": "authority",
+      "authority_levels": {
+        "standard": {"max_premium": 50000, "loss_ratio_max": 50},
+        "senior": {"max_premium": 150000},
+        "management": {"max_premium": 500000},
+        "reinsurance": {"above_premium": 500000}
+      }
+    },
+    {
+      "name": "Loss History Evaluation",
+      "category": "underwriting",
+      "content": "Loss history review covers minimum 3 years, preferably 5 years. Evaluate frequency (number of claims) and severity (claim amounts). Loss ratio calculation: Incurred losses divided by earned premium. Acceptable loss ratios by line: GL under 50%, Property under 40%, Auto under 60%, WC under 65%. Single large loss analysis considers whether loss is isolated incident or systemic issue. Reserves should be verified for accuracy. Credit for implemented loss control measures. Prior carrier loss runs required for risks over $25,000 premium.",
+      "coverage_type": "loss_history",
+      "acceptable_loss_ratios": {
+        "general_liability": 50,
+        "property": 40,
+        "auto_liability": 60,
+        "workers_compensation": 65
+      },
+      "minimum_loss_years": 3,
+      "preferred_loss_years": 5
+    },
+    {
+      "name": "Risk Appetite - Preferred Classes",
+      "category": "appetite",
+      "content": "Preferred business classes with favorable risk profiles: Professional services (legal, accounting, consulting), Information technology and software companies, Wholesale trade and distribution, Retail trade (excluding high-value goods), Light manufacturing, Real estate property management, Educational services. These classes typically exhibit lower claim frequency and severity. Standard pricing with potential discounts for excellent loss history. Simplified underwriting for accounts under $10,000 premium.",
+      "coverage_type": "appetite",
+      "risk_level": "preferred",
+      "eligible_bic_codes": ["51", "54", "42", "44-45", "53", "61"]
+    },
+    {
+      "name": "Risk Appetite - Standard Classes",
+      "category": "appetite",
+      "content": "Standard business classes with moderate risk profiles: Food and beverage manufacturing, Restaurants and food service, General construction (residential), Healthcare services, Transportation and warehousing, Personal care services. These classes require full underwriting review. Standard pricing applies. Loss control recommendations may be required. Deductible options based on account size and loss history.",
+      "coverage_type": "appetite",
+      "risk_level": "standard",
+      "eligible_bic_codes": ["31", "72-2", "23", "62", "49", "81-2"]
+    },
+    {
+      "name": "Risk Appetite - Substandard/Referred Classes",
+      "category": "appetite",
+      "content": "Substandard or referred classes requiring senior review: Commercial construction (heavy/industrial), Bars and nightclubs, Mining and extraction, Agriculture and farming, Long-haul trucking. These classes have elevated loss potential. Premium surcharges typically apply. Higher deductibles required. Enhanced documentation and loss control required. May require management approval. Some classes may be declined based on current portfolio.",
+      "coverage_type": "appetite",
+      "risk_level": "substandard",
+      "eligible_bic_codes": ["44", "72-4", "21", "11", "48"]
+    },
+    {
+      "name": "Coverage Endorsements - General Liability",
+      "category": "endorsements",
+      "content": "Common GL endorsements: Additional Insured - provides coverage to third parties as required by contract. Waiver of Subrogation - waives carrier's right to recover from third party. Primary and Non-Contributory - makes policy primary over other insurance. Per Project Aggregate - separate aggregate for each project (construction). Designated Construction Project - limits coverage to specific project. Employment Practices Liability - covers discrimination, harassment, wrongful termination. Cyber Liability - covers data breach and cyber incidents.",
+      "coverage_type": "endorsements",
+      "line_of_business": "general_liability",
+      "common_endorsements": ["additional_insured", "waiver_of_subrogation", "primary_noncontributory", "per_project_aggregate"]
+    },
+    {
+      "name": "Premium Payment Terms",
+      "category": "billing",
+      "content": "Premium payment options: Full pay (discount may apply), Quarterly installments (25% per quarter), Monthly installments (finance charges apply). Down payment requirements: Minimum 25% at binding for new accounts, 10% for renewal accounts. Finance charges: Typically 1.5% per month on unpaid balance. Cancellation for non-payment: 10-day notice after grace period. Audit premium due within 30 days of final audit. Reinstatement requires full past due amount plus fees.",
+      "coverage_type": "billing",
+      "payment_options": ["full_pay", "quarterly", "monthly"],
+      "minimum_down_payment_new": 25,
+      "minimum_down_payment_renewal": 10
+    },
+    {
+      "name": "Construction Risk Guidelines",
+      "category": "industry_specific",
+      "content": "Construction industry underwriting guidelines: Subcontractor requirements - certificates of insurance required for all subs, minimum limits matching project requirements. Safety programs - OSHA compliance verification, written safety manual required for accounts over $100K premium. Equipment - owned equipment list required, replacement cost valuation. Project types - residential, commercial, industrial, infrastructure each carry different risk profiles. Wrap-up considerations for large projects. Completed operations coverage extends 3-5 years post completion. Contractor license verification required.",
+      "coverage_type": "industry_guidelines",
+      "industry": "construction",
+      "requirements": ["subcontractor_cois", "safety_program", "equipment_list", "license_verification"]
+    },
+    {
+      "name": "Restaurant Risk Guidelines",
+      "category": "industry_specific",
+      "content": "Restaurant industry underwriting guidelines: Food safety - health inspection scores required, minimum B grade or equivalent. Liquor service - separate liquor liability required if alcohol revenue exceeds 25% of total. Kitchen equipment - automatic fire suppression (Ansul system) required. Hours of operation - late night operations (past midnight) require additional review. Entertainment - live music or dancing increases premises liability exposure. Delivery operations - hired/non-owned auto required, driver MVR review. Franchise vs independent - franchise may have mandatory insurance requirements.",
+      "coverage_type": "industry_guidelines",
+      "industry": "restaurant",
+      "requirements": ["health_inspection", "fire_suppression", "liquor_license_if_applicable"]
+    }
+  ]
+}

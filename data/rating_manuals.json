@@ -1,0 +1,372 @@
+{
+  "description": "Base rates and rating tables for insurance underwriting",
+  "version": "1.0",
+  "effective_date": "2024-01-01",
+  "rates": [
+    {
+      "bic_code": "11",
+      "industry": "Agriculture, Forestry, Fishing",
+      "content": "Base rates for agriculture forestry fishing industry. High risk due to equipment, weather exposure, and physical labor. General liability rate $12.50 per $1,000 revenue. Property rate 0.85% of TIV. Workers comp base $8.50 per $100 payroll.",
+      "general_liability": {
+        "base_rate_per_1000": 12.50,
+        "minimum_premium": 2500,
+        "rate_basis": "revenue"
+      },
+      "property": {
+        "base_rate_percent": 0.85,
+        "minimum_premium": 1500,
+        "rate_basis": "total_insurable_value"
+      },
+      "workers_comp": {
+        "base_rate_per_100": 8.50,
+        "rate_basis": "payroll"
+      },
+      "auto_liability": {
+        "base_rate_per_vehicle": 1200,
+        "rate_basis": "vehicle_count"
+      }
+    },
+    {
+      "bic_code": "21",
+      "industry": "Mining, Quarrying, Oil and Gas",
+      "content": "Base rates for mining quarrying oil gas extraction. Very high risk industry with significant environmental and safety exposures. General liability rate $18.00 per $1,000 revenue. Property rate 1.25% of TIV.",
+      "general_liability": {
+        "base_rate_per_1000": 18.00,
+        "minimum_premium": 5000,
+        "rate_basis": "revenue"
+      },
+      "property": {
+        "base_rate_percent": 1.25,
+        "minimum_premium": 3500,
+        "rate_basis": "total_insurable_value"
+      },
+      "workers_comp": {
+        "base_rate_per_100": 15.00,
+        "rate_basis": "payroll"
+      },
+      "auto_liability": {
+        "base_rate_per_vehicle": 1500,
+        "rate_basis": "vehicle_count"
+      }
+    },
+    {
+      "bic_code": "22",
+      "industry": "Utilities",
+      "content": "Base rates for utilities electric power natural gas water. Medium risk with infrastructure exposures. General liability rate $6.50 per $1,000 revenue. Property rate 0.55% of TIV.",
+      "general_liability": {
+        "base_rate_per_1000": 6.50,
+        "minimum_premium": 3000,
+        "rate_basis": "revenue"
+      },
+      "property": {
+        "base_rate_percent": 0.55,
+        "minimum_premium": 2500,
+        "rate_basis": "total_insurable_value"
+      },
+      "workers_comp": {
+        "base_rate_per_100": 5.50,
+        "rate_basis": "payroll"
+      },
+      "auto_liability": {
+        "base_rate_per_vehicle": 900,
+        "rate_basis": "vehicle_count"
+      }
+    },
+    {
+      "bic_code": "23",
+      "industry": "Construction - General",
+      "content": "Base rates for general construction residential renovation. Medium risk with bodily injury and property damage exposures. General liability rate $7.50 per $1,000 revenue. Property rate 0.65% of TIV.",
+      "general_liability": {
+        "base_rate_per_1000": 7.50,
+        "minimum_premium": 2000,
+        "rate_basis": "revenue"
+      },
+      "property": {
+        "base_rate_percent": 0.65,
+        "minimum_premium": 1500,
+        "rate_basis": "total_insurable_value"
+      },
+      "workers_comp": {
+        "base_rate_per_100": 7.00,
+        "rate_basis": "payroll"
+      },
+      "auto_liability": {
+        "base_rate_per_vehicle": 950,
+        "rate_basis": "vehicle_count"
+      }
+    },
+    {
+      "bic_code": "44",
+      "industry": "Construction - Commercial/Industrial",
+      "content": "Base rates for commercial industrial heavy construction. High risk due to project size, equipment, and worker exposures. General liability rate $8.50 per $1,000 revenue. Property rate 0.75% of TIV. Auto rate $750 per vehicle for fleet.",
+      "general_liability": {
+        "base_rate_per_1000": 8.50,
+        "minimum_premium": 3000,
+        "rate_basis": "revenue"
+      },
+      "property": {
+        "base_rate_percent": 0.75,
+        "minimum_premium": 2000,
+        "rate_basis": "total_insurable_value"
+      },
+      "workers_comp": {
+        "base_rate_per_100": 9.50,
+        "rate_basis": "payroll"
+      },
+      "auto_liability": {
+        "base_rate_per_vehicle": 750,
+        "rate_basis": "vehicle_count"
+      }
+    },
+    {
+      "bic_code": "31",
+      "industry": "Manufacturing - Food and Beverage",
+      "content": "Base rates for food beverage manufacturing processing. Medium risk with product liability and equipment exposures. General liability rate $5.50 per $1,000 revenue. Property rate 0.50% of TIV.",
+      "general_liability": {
+        "base_rate_per_1000": 5.50,
+        "minimum_premium": 2500,
+        "rate_basis": "revenue"
+      },
+      "property": {
+        "base_rate_percent": 0.50,
+        "minimum_premium": 2000,
+        "rate_basis": "total_insurable_value"
+      },
+      "workers_comp": {
+        "base_rate_per_100": 4.50,
+        "rate_basis": "payroll"
+      },
+      "auto_liability": {
+        "base_rate_per_vehicle": 700,
+        "rate_basis": "vehicle_count"
+      }
+    },
+    {
+      "bic_code": "42",
+      "industry": "Wholesale Trade",
+      "content": "Base rates for wholesale trade distribution. Low to medium risk with warehouse and delivery exposures. General liability rate $3.50 per $1,000 revenue. Property rate 0.35% of TIV.",
+      "general_liability": {
+        "base_rate_per_1000": 3.50,
+        "minimum_premium": 1500,
+        "rate_basis": "revenue"
+      },
+      "property": {
+        "base_rate_percent": 0.35,
+        "minimum_premium": 1200,
+        "rate_basis": "total_insurable_value"
+      },
+      "workers_comp": {
+        "base_rate_per_100": 3.00,
+        "rate_basis": "payroll"
+      },
+      "auto_liability": {
+        "base_rate_per_vehicle": 850,
+        "rate_basis": "vehicle_count"
+      }
+    },
+    {
+      "bic_code": "44-45",
+      "industry": "Retail Trade - General",
+      "content": "Base rates for retail trade stores shops. Low risk with slip/fall and inventory exposures. General liability rate $3.00 per $1,000 revenue. Property rate 0.30% of TIV.",
+      "general_liability": {
+        "base_rate_per_1000": 3.00,
+        "minimum_premium": 1000,
+        "rate_basis": "revenue"
+      },
+      "property": {
+        "base_rate_percent": 0.30,
+        "minimum_premium": 800,
+        "rate_basis": "total_insurable_value"
+      },
+      "workers_comp": {
+        "base_rate_per_100": 2.50,
+        "rate_basis": "payroll"
+      },
+      "auto_liability": {
+        "base_rate_per_vehicle": 650,
+        "rate_basis": "vehicle_count"
+      }
+    },
+    {
+      "bic_code": "48",
+      "industry": "Transportation - Trucking",
+      "content": "Base rates for trucking transportation freight. High risk due to vehicle accidents and cargo exposures. General liability rate $9.00 per $1,000 revenue. Auto liability primary coverage $1,100 per vehicle.",
+      "general_liability": {
+        "base_rate_per_1000": 9.00,
+        "minimum_premium": 3500,
+        "rate_basis": "revenue"
+      },
+      "property": {
+        "base_rate_percent": 0.45,
+        "minimum_premium": 1500,
+        "rate_basis": "total_insurable_value"
+      },
+      "workers_comp": {
+        "base_rate_per_100": 6.50,
+        "rate_basis": "payroll"
+      },
+      "auto_liability": {
+        "base_rate_per_vehicle": 1100,
+        "rate_basis": "vehicle_count"
+      }
+    },
+    {
+      "bic_code": "51",
+      "industry": "Information Technology",
+      "content": "Base rates for information technology software services. Low physical risk but E&O and cyber exposures. General liability rate $2.50 per $1,000 revenue. Property rate 0.25% of TIV.",
+      "general_liability": {
+        "base_rate_per_1000": 2.50,
+        "minimum_premium": 1000,
+        "rate_basis": "revenue"
+      },
+      "property": {
+        "base_rate_percent": 0.25,
+        "minimum_premium": 750,
+        "rate_basis": "total_insurable_value"
+      },
+      "workers_comp": {
+        "base_rate_per_100": 1.50,
+        "rate_basis": "payroll"
+      },
+      "auto_liability": {
+        "base_rate_per_vehicle": 550,
+        "rate_basis": "vehicle_count"
+      },
+      "cyber_liability": {
+        "base_rate_per_1000": 4.00,
+        "minimum_premium": 2500,
+        "rate_basis": "revenue"
+      }
+    },
+    {
+      "bic_code": "54",
+      "industry": "Professional Services",
+      "content": "Base rates for professional services legal accounting consulting. Low physical risk with professional liability exposures. General liability rate $2.00 per $1,000 revenue.",
+      "general_liability": {
+        "base_rate_per_1000": 2.00,
+        "minimum_premium": 800,
+        "rate_basis": "revenue"
+      },
+      "property": {
+        "base_rate_percent": 0.20,
+        "minimum_premium": 600,
+        "rate_basis": "total_insurable_value"
+      },
+      "workers_comp": {
+        "base_rate_per_100": 1.25,
+        "rate_basis": "payroll"
+      },
+      "auto_liability": {
+        "base_rate_per_vehicle": 500,
+        "rate_basis": "vehicle_count"
+      },
+      "professional_liability": {
+        "base_rate_per_1000": 5.00,
+        "minimum_premium": 2000,
+        "rate_basis": "revenue"
+      }
+    },
+    {
+      "bic_code": "62",
+      "industry": "Healthcare - Medical",
+      "content": "Base rates for healthcare medical services hospitals clinics. High risk due to malpractice and patient injury exposures. General liability rate $7.00 per $1,000 revenue. Medical malpractice separate.",
+      "general_liability": {
+        "base_rate_per_1000": 7.00,
+        "minimum_premium": 2500,
+        "rate_basis": "revenue"
+      },
+      "property": {
+        "base_rate_percent": 0.45,
+        "minimum_premium": 1500,
+        "rate_basis": "total_insurable_value"
+      },
+      "workers_comp": {
+        "base_rate_per_100": 4.00,
+        "rate_basis": "payroll"
+      },
+      "auto_liability": {
+        "base_rate_per_vehicle": 600,
+        "rate_basis": "vehicle_count"
+      }
+    },
+    {
+      "bic_code": "72-2",
+      "industry": "Food Services - Restaurants",
+      "content": "Base rates for restaurants dining establishments. Medium risk with food safety and slip/fall exposures. General liability rate $6.00 per $1,000 revenue. Liquor liability additional if serving alcohol.",
+      "general_liability": {
+        "base_rate_per_1000": 6.00,
+        "minimum_premium": 1500,
+        "rate_basis": "revenue"
+      },
+      "property": {
+        "base_rate_percent": 0.55,
+        "minimum_premium": 1200,
+        "rate_basis": "total_insurable_value"
+      },
+      "workers_comp": {
+        "base_rate_per_100": 3.50,
+        "rate_basis": "payroll"
+      },
+      "auto_liability": {
+        "base_rate_per_vehicle": 700,
+        "rate_basis": "vehicle_count"
+      },
+      "liquor_liability": {
+        "base_rate_per_1000": 2.50,
+        "minimum_premium": 1000,
+        "rate_basis": "alcohol_revenue"
+      }
+    },
+    {
+      "bic_code": "72-4",
+      "industry": "Food Services - Bars and Nightclubs",
+      "content": "Base rates for bars nightclubs drinking establishments. High risk due to alcohol service and assault/battery exposures. General liability rate $10.00 per $1,000 revenue. Liquor liability required.",
+      "general_liability": {
+        "base_rate_per_1000": 10.00,
+        "minimum_premium": 2500,
+        "rate_basis": "revenue"
+      },
+      "property": {
+        "base_rate_percent": 0.65,
+        "minimum_premium": 1500,
+        "rate_basis": "total_insurable_value"
+      },
+      "workers_comp": {
+        "base_rate_per_100": 4.50,
+        "rate_basis": "payroll"
+      },
+      "auto_liability": {
+        "base_rate_per_vehicle": 750,
+        "rate_basis": "vehicle_count"
+      },
+      "liquor_liability": {
+        "base_rate_per_1000": 5.00,
+        "minimum_premium": 2500,
+        "rate_basis": "alcohol_revenue"
+      }
+    },
+    {
+      "bic_code": "81-2",
+      "industry": "Personal Care Services",
+      "content": "Base rates for beauty salons barbershops spas nail salons. Low risk with professional services exposures. General liability rate $2.50 per $1,000 revenue.",
+      "general_liability": {
+        "base_rate_per_1000": 2.50,
+        "minimum_premium": 750,
+        "rate_basis": "revenue"
+      },
+      "property": {
+        "base_rate_percent": 0.30,
+        "minimum_premium": 600,
+        "rate_basis": "total_insurable_value"
+      },
+      "workers_comp": {
+        "base_rate_per_100": 1.75,
+        "rate_basis": "payroll"
+      },
+      "auto_liability": {
+        "base_rate_per_vehicle": 500,
+        "rate_basis": "vehicle_count"
+      }
+    }
+  ]
+}

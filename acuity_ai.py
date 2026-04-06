@@ -16,12 +16,12 @@ from docx import Document
  
 # --- INITIALIZE ENVIRONMENT ---
 load_dotenv()
-GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
+GOOGLE_API_KEY = "AIzaSyCXurwAMAHUQcl14-E3q-i-5tpwNgzuhv8"
  
 # --- PAGE CONFIG ---
-st.set_page_config(page_title="Acuity AI", layout="wide", initial_sidebar_state="expanded")
- 
-# --- CUSTOM CSS (Corporate Dark Theme) ---
+st.set_page_config(page_title="Acuity AI - Financial Portfolio Advisor", layout="wide", initial_sidebar_state="expanded")
+
+# --- CUSTOM CSS (Enhanced Corporate Dark Theme) ---
 st.markdown("""
 <style>
     .stApp { background-color: #0D1117; color: #E6E6E6; }
@@ -36,7 +36,7 @@ st.markdown("""
         background: rgba(255, 255, 255, 0.02);
         margin-top: 50px;
     }
- 
+    
     /* KPI Header */
     .kpi-container {
         display: flex;
@@ -49,6 +49,15 @@ st.markdown("""
     }
     .kpi-box { text-align: center; }
     .kpi-value { font-size: 1.8rem; font-weight: bold; color: #0096C7; }
+    
+    /* Info Boxes */
+    .info-box {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 15px;
+        border-radius: 10px;
+        border-left: 4px solid #0096C7;
+        margin-bottom: 15px;
+    }
 </style>
 """, unsafe_allow_html=True)
  
@@ -76,14 +85,26 @@ with st.sidebar:
     st.markdown("<h1 style='color: #0096C7;'>🛡️ Acuity AI</h1>", unsafe_allow_html=True)
     st.caption("Strategic Control Panel")
     st.divider()
- 
+    
     st.markdown("### 🖥️ Display Controls")
-    show_heatmap = st.toggle("Risk Heatmap", value=False)
-    show_gauge = st.toggle("Health Gauge", value=False)
-    show_table = st.toggle("Detailed Logs", value=False)
- 
+    show_heatmap = st.toggle("Risk Heatmap", value=False, help="Show a visual heatmap of risk scores across portfolio chunks.")
+    show_gauge = st.toggle("Health Gauge", value=False, help="Display a gauge showing overall portfolio health.")
+    show_table = st.toggle("Detailed Logs", value=False, help="View detailed risk analysis table.")
+    
     st.divider()
-    if st.button("Reset Session", use_container_width=True):
+    st.markdown("### ℹ️ About")
+    st.info("Acuity AI analyzes your financial portfolio PDF to identify risks, provide insights, and offer AI-powered advice.")
+    
+    st.markdown("### 📋 How to Use")
+    with st.expander("Quick Guide"):
+        st.markdown("""
+        1. **Upload PDF**: Upload your portfolio report (PDF format).
+        2. **View Insights**: Check KPIs and visualizations.
+        3. **Chat with AI**: Ask questions about risks, dependencies, or strategies.
+        4. **Download Report**: Export your conversation as a Word document.
+        """)
+    
+    if st.button("Reset Session", use_container_width=True, help="Clear all chat history and start fresh."):
         st.session_state.messages = []
         st.rerun()
  
@@ -94,11 +115,14 @@ if not GOOGLE_API_KEY:
     st.error("Missing GOOGLE_API_KEY. Please ensure your .env file is configured correctly.")
     st.stop()
  
-# 2. Main Title
-st.markdown("<h1 style='text-align: center; color: #0096C7;'>Enterprise Portfolio Intelligence</h1>", unsafe_allow_html=True)
+# 2. Main Title and Intro
+st.markdown("<h1 style='text-align: center; color: #0096C7;'>🛡️ Acuity AI - Financial Portfolio Advisor</h1>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; color: #8B949E;'>Intelligent analysis of your investment portfolio using AI-powered insights and risk assessment.</p>", unsafe_allow_html=True)
+st.divider()
  
 # 3. File Upload (Conditional Rendering)
-uploaded_pdf = st.file_uploader("Upload Portfolio PDF", type="pdf", label_visibility="collapsed")
+st.markdown("### 📄 Upload Your Portfolio Report")
+uploaded_pdf = st.file_uploader("Upload Portfolio PDF", type="pdf", label_visibility="collapsed", help="Select a PDF file containing your financial portfolio details for analysis.")
  
 if not uploaded_pdf:
     # Display Welcome Screen if no file is present
@@ -106,9 +130,13 @@ if not uploaded_pdf:
     <div class="upload-container">
         <h2 style='color: #E6E6E6;'>Welcome to Acuity AI</h2>
         <p style='color: #8B949E;'>To begin your intelligence analysis, please upload your project portfolio or executive PDF report above.</p>
+        <div class="info-box">
+            <strong>What to expect:</strong> Our AI will analyze your portfolio for risks, provide health scores, and answer your questions about investments, dependencies, and strategies.
+        </div>
     </div>
     """, unsafe_allow_html=True)
 else:
+    st.success("PDF uploaded successfully! Analyzing your portfolio...")
     # --- PROCESSING LOGIC (Runs once per file) ---
     @st.cache_resource
     def process_data(file):
@@ -145,12 +173,15 @@ else:
  
     # --- ACTIVE DASHBOARD UI ---
     
+    st.markdown("### 📊 Portfolio Analysis Dashboard")
+    st.markdown("Below is a summary of your portfolio's health based on AI analysis of the uploaded document.")
+    
     # KPI Bar
     st.markdown(f"""
     <div class="kpi-container">
-        <div class="kpi-box">Portfolio Health<br><span class="kpi-value">{health_idx:.0f}%</span></div>
-        <div class="kpi-box">Avg Risk Score<br><span class="kpi-value">{avg_score:.1f}</span></div>
-        <div class="kpi-box">Analysis Chunks<br><span class="kpi-value">{len(risk_df)}</span></div>
+        <div class="kpi-box">Portfolio Health<br><span class="kpi-value">{health_idx:.0f}%</span><br><small>Higher is better</small></div>
+        <div class="kpi-box">Avg Risk Score<br><span class="kpi-value">{avg_score:.1f}</span><br><small>Out of 10</small></div>
+        <div class="kpi-box">Analysis Chunks<br><span class="kpi-value">{len(risk_df)}</span><br><small>Document sections</small></div>
     </div>
     """, unsafe_allow_html=True)
  
@@ -166,12 +197,15 @@ else:
     if any_viz:
         with col_viz:
             st.subheader("📊 Analytical Overlays")
+            st.markdown("Visual representations of your portfolio's risk profile.")
             if show_heatmap:
+                st.markdown("**Risk Heatmap:** Shows risk scores across different sections of your portfolio document.")
                 fig = px.imshow(np.array([risk_df["Score"]]), color_continuous_scale="Reds")
                 fig.update_layout(height=200, margin=dict(l=0, r=0, t=10, b=0))
                 st.plotly_chart(fig, use_container_width=True)
             
             if show_gauge:
+                st.markdown("**Health Gauge:** Overall portfolio health indicator.")
                 gauge = go.Figure(go.Indicator(
                     mode="gauge+number", value=health_idx,
                     gauge={'axis': {'range': [0, 100]}, 'bar': {'color': "#0096C7"}}))
@@ -179,11 +213,13 @@ else:
                 st.plotly_chart(gauge, use_container_width=True)
             
             if show_table:
+                st.markdown("**Detailed Risk Analysis:** Breakdown of risk scores for each document chunk.")
                 st.dataframe(risk_df, hide_index=True, use_container_width=True)
  
     # CHAT COLUMN
     with (col_chat if any_viz else st.container()):
-        st.subheader("💬 Acuity AI Analyst")
+        st.subheader("💬 AI Financial Advisor")
+        st.markdown("Ask questions about your portfolio, risks, investment strategies, or get personalized advice.")
         
         chat_container = st.container(height=550 if any_viz else 650)
         with chat_container:
@@ -191,7 +227,7 @@ else:
                 with st.chat_message(m["role"]):
                     st.markdown(m["content"])
  
-        if prompt := st.chat_input("Analyze specific project risks or financial dependencies..."):
+        if prompt := st.chat_input("E.g., 'What are the main risks in my portfolio?' or 'Suggest diversification strategies.'"):
             st.session_state.messages.append({"role": "user", "content": prompt})
             with chat_container:
                 with st.chat_message("user"):
@@ -210,10 +246,15 @@ else:
 
         # Download Report Button
         if st.session_state.messages:
+            st.markdown("### 📥 Export Conversation")
             st.download_button(
-                label="📥 Download Report",
+                label="Download Report as Word Document",
                 data=build_report(st.session_state.messages),
-                file_name="AcuityAI_Report.docx",
-                mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                file_name="AcuityAI_Portfolio_Report.docx",
+                mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+                help="Export your chat conversation and analysis as a downloadable report."
             )
+
+st.divider()
+st.markdown("<p style='text-align: center; color: #8B949E;'>Powered by Acuity AI | Multi-Agent Financial Analysis System</p>", unsafe_allow_html=True)
  

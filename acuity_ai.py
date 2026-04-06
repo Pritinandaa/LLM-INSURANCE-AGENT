@@ -16,7 +16,7 @@ from docx import Document
  
 # --- INITIALIZE ENVIRONMENT ---
 load_dotenv()
-GOOGLE_API_KEY = "AIzaSyCXurwAMAHUQcl14-E3q-i-5tpwNgzuhv8"
+GOOGLE_API_KEY = "Place your key"
  
 # --- PAGE CONFIG ---
 st.set_page_config(page_title="Acuity AI - Financial Portfolio Advisor", layout="wide", initial_sidebar_state="expanded")
